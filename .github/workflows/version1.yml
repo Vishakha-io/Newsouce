@@ -1,11 +1,13 @@
-name: "Version1"
+name: "Version2"
 
 on:
-  push
+  push:
+    branches:
+      - master
 
 jobs:
   stage1: 
     runs-on: ubuntu-latest
     steps:
-      - name: say version1
+      - name: say version2
         run: echo "Hello from Version-1"
