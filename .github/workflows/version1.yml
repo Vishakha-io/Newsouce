@@ -1,0 +1,11 @@
+name: "Version1"
+
+on:
+  push
+
+jobs:
+  stage1: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: say version1
+        run: echo "Hello from Version-1"
