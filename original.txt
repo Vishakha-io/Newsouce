@@ -1,2 +1,3 @@
 Hello world
 Hello feature
+Hello restricted feature
