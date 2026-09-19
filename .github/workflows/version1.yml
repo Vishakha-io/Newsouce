@@ -9,5 +9,14 @@ jobs:
   stage1: 
     runs-on: ubuntu-latest
     steps:
-      - name: say version2
-        run: echo "Hello from Version-1"
+      - name: Files before checkout
+        run: ls -la
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Files after checkout
+        run: ls -la
+
+      - name: Read original file
+        run: cat original.txt
