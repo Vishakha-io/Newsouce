@@ -1,4 +1,4 @@
-name: "Version2"
+name: "Node CI"
 
 on:
   push:
@@ -6,28 +6,20 @@ on:
       - master
 
 jobs:
-  stage1: 
+  test:
     runs-on: ubuntu-latest
-    steps:
-      - name: Files before checkout
-        run: ls -la
 
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Files after checkout
-        run: ls -la
-
-      - name: Read original file
-        run: cat original.txt
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: Check Node version
-        run: node --version
+      - name: Install dependencies
+        run: npm ci
 
       - name: Run tests
-        run: node test.js
+        run: npm test
