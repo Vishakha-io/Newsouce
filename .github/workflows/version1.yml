@@ -46,5 +46,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Download compiled application
+        uses: actions/download-artifact@v4
+        with:
+          name: compiled-app
+
+      - name: Run compiled application
+        run: node hello.js
+
       - name: Run tests
         run: npm test
