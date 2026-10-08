@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+  "test": "node test.js",
+  "build": "tsc hello.ts --noEmitOnError"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Vishakha-io/Newsouce/issues"
   },
-  "homepage": "https://github.com/Vishakha-io/Newsouce#readme"
+  "homepage": "https://github.com/Vishakha-io/Newsouce#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
 }
