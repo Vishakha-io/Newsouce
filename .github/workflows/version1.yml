@@ -5,11 +5,17 @@ on:
     branches:
       - master
 
+env:
+  APP_MODE: development
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Show environment
+        run: echo "$APP_MODE"
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
