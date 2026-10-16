@@ -16,6 +16,17 @@ jobs:
       - name: Show environment
         run: echo "$APP_MODE"
 
+      - name: Verify GitHub Secret
+        env:
+          DEMO_TOKEN: ${{ secrets.DEMO_TOKEN }}
+        run: |
+            if [ -n "$DEMO_TOKEN" ]; then
+              echo "Secret is available"
+            else
+              echo "Secret is missing"
+              exit 1
+            fi
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
