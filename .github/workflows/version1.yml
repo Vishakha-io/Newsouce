@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  APP_MODE: development
+  APP_MODE: ${{ vars.APP_MODE }}
 
 jobs:
   build:
